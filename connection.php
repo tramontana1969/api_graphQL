@@ -1,6 +1,6 @@
 <?php
 class Connection {
-
+    public static array $array;
     static function connect(string $url, string $method){
         $ch = curl_init($url);
         curl_setopt($ch,CURLOPT_HTTPHEADER, array(
@@ -12,6 +12,7 @@ class Connection {
                 break;
             case 'post':
                 curl_setopt($ch,CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(self::$array,JSON_UNESCAPED_UNICODE));
                 break;
             case 'put':
                 curl_setopt($ch, CURLOPT_PUT, 1);
