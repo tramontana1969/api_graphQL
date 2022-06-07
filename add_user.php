@@ -3,7 +3,7 @@ require 'users.php';
 
 $user = new User();
 
-if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['gender']) && !empty($_POST['status'])){
+if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['gender']) && !empty($_POST['status'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $gender = $_POST['gender'];
@@ -14,3 +14,4 @@ if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['gender']
 
 $referer = $_SERVER['HTTP_REFERER'];
 header("Location: $referer");
+exit();
