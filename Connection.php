@@ -20,7 +20,8 @@ class Connection
                 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(self::$array, JSON_UNESCAPED_UNICODE));
                 break;
             case 'put':
-                curl_setopt($ch, CURLOPT_PUT, 1);
+                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(self::$array, JSON_UNESCAPED_UNICODE));
                 break;
             case 'delete':
                 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
