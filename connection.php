@@ -9,6 +9,7 @@ class Connection {
             "Authorization: Bearer af842cebac7e3eb29852f5198eea4a644de6eca7ffb87a68c0b25430121ec123"));
         switch ($method) {
             case 'get':
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 break;
             case 'post':
                 curl_setopt($ch,CURLOPT_POST, 1);
@@ -21,7 +22,8 @@ class Connection {
                 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
                 break;
         }
-        curl_exec($ch);
+        $output = curl_exec($ch);
         curl_close($ch);
+        return $output;
     }
 }
