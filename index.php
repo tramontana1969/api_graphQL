@@ -1,6 +1,8 @@
 <?php
 require_once 'Controllers/User.php';
 $users = new User();
+$genders = ['male', 'female'];
+$statuses = ['active', 'inactive'];
 ?>
 <html>
 <DOCTYPE html>
@@ -55,12 +57,13 @@ $users = new User();
                                     <label class="form-check-label" for="InputGender">Gender</label>
                                     <select class="form-select" id="InputGender" aria-label="Gender" name="gender">
                                         <?php
-                                        if ($user['gender'] === 'male'):
-                                            echo '<option value="female">female</option>';
-                                        else:
-                                            echo '<option value="male">male</option>';
-                                        endif;
-                                        echo '<option selected value="'.$user["gender"].'">'.$user["gender"].'</option>';
+                                        foreach ($genders as $gender):
+                                            if ($user['gender'] == $gender):
+                                                echo '<option selected value="'.$gender.'">'.$gender.'</option>';
+                                            else:
+                                                echo '<option value="'.$gender.'">'.$gender.'</option>';
+                                            endif;
+                                        endforeach;
                                         ?>
                                     </select>
                                 </div>
@@ -68,12 +71,13 @@ $users = new User();
                                     <label class="form-check-label" for="InputStatus">Status</label>
                                     <select class="form-select" id="InputStatus" aria-label="Status" name="status">
                                         <?php
-                                        if ($user['status'] == 'active'):
-                                            echo '<option value="inactive">Inactive</option>';
-                                        else:
-                                            echo '<option value="active">active</option>';
-                                        endif;
-                                        echo '<option selected value="'.$user["status"].'">'.$user["status"].'</option>';
+                                        foreach ($statuses as $status):
+                                            if ($user['status'] == $status):
+                                                echo '<option selected value="'.$status.'">'.$status.'</option>';
+                                            else:
+                                                echo '<option value="'.$status.'">'.$status.'</option>';
+                                            endif;
+                                        endforeach;
                                         ?>
                                     </select>
                                 </div>
