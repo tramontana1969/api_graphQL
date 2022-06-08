@@ -3,12 +3,12 @@ require_once '../Controllers/User.php';
 
 $user = new User();
 
-if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['gender']) && !empty($_POST['status'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $gender = $_POST['gender'];
-    $status = $_POST['status'];
+$name = $_POST['name'];
+$email = $_POST['email'];
+$gender = $_POST['gender'];
+$status = $_POST['status'];
 
+if (!empty($name) && !empty($email) && !empty($gender) && !empty($status)) {
     $user->add($name, $email, $gender, $status);
 }
 
