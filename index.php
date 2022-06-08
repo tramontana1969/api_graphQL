@@ -1,7 +1,6 @@
 <?php
-require 'Controllers/User.php';
+require_once 'Controllers/User.php';
 $users = new User();
-$all = $users->store();
 ?>
 <html>
 <DOCTYPE html>

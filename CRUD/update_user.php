@@ -1,6 +1,6 @@
 <?php
 
-require "../Controllers/User.php";
+require_once "../Controllers/User.php";
 
 $user = new User();
 
