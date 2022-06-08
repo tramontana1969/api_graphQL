@@ -58,11 +58,8 @@ $statuses = ['active', 'inactive'];
                                     <select class="form-select" id="InputGender" aria-label="Gender" name="gender">
                                         <?php
                                         foreach ($genders as $gender):
-                                            if ($user['gender'] == $gender):
-                                                echo '<option selected value="' . $gender . '">' . $gender . '</option>';
-                                            else:
-                                                echo '<option value="' . $gender . '">' . $gender . '</option>';
-                                            endif;
+                                            $selected = ($user['gender'] === $gender) ? 'selected' : '';
+                                            echo '<option ' . $selected . ' value="' . $gender . '">' . $gender . '</option>';
                                         endforeach;
                                         ?>
                                     </select>
@@ -72,11 +69,8 @@ $statuses = ['active', 'inactive'];
                                     <select class="form-select" id="InputStatus" aria-label="Status" name="status">
                                         <?php
                                         foreach ($statuses as $status):
-                                            if ($user['status'] == $status):
-                                                echo '<option selected value="' . $status . '">' . $status . '</option>';
-                                            else:
-                                                echo '<option value="' . $status . '">' . $status . '</option>';
-                                            endif;
+                                            $selected = ($user['status'] === $status) ? 'selected' : '';
+                                            echo '<option ' . $selected . ' value="' . $status . '">' . $status . '</option>';
                                         endforeach;
                                         ?>
                                     </select>
