@@ -21,4 +21,10 @@ class User
         Connection::$array = ['name' => $name, 'email' => $email, 'gender' => $gender, 'status' => $status];
         return Connection::connect("https://gorest.co.in/public/v2/users/{$id}", 'put');
     }
+
+    public function delete($id)
+    {
+        Connection::$array = ['id' => $id];
+        return Connection::connect("https://gorest.co.in/public/v2/users/{$id}", 'delete');
+    }
 }
