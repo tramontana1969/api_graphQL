@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../Config.php';
+
 class Connection
 {
     public static array $user_data;
@@ -7,10 +9,7 @@ class Connection
     static function connect(string $url, string $method): string
     {
         $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Accept:application/json',
-            'Content-Type:application/json',
-            "Authorization: Bearer af842cebac7e3eb29852f5198eea4a644de6eca7ffb87a68c0b25430121ec123"));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, Config::get_config());
         switch ($method) {
             case 'get':
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
