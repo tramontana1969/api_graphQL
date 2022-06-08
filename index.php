@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-require 'User.php';
+require 'Controllers/User.php';
 $users = new User();
 $all = $users->store();
 ini_set('display_errors', 1);
@@ -48,7 +48,7 @@ error_reporting(E_ALL);
                                     aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form method="post" action="update_user.php">
+                            <form method="post" action="CRUD/update_user.php">
                                 <div class="mb-3">
                                     <?php echo "<input type='hidden' name='id' value={$user['id']} />" ?>
                                     <label for="exampleInputEmail1" class="form-label">Name</label>
@@ -112,7 +112,7 @@ error_reporting(E_ALL);
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                            <form method="post" action="delete_user.php">
+                            <form method="post" action="CRUD/delete_user.php">
                                 <?php echo "<input type='hidden' name='id' value='{$user['id']}'/>"; ?>
                                 <input class="btn btn-danger" type="submit" value="Delete"/>
                             </form>
@@ -137,7 +137,7 @@ error_reporting(E_ALL);
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="add_user.php">
+                    <form method="post" action="CRUD/add_user.php">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Name</label>
                             <input type="text" name="name" class="form-control" id="exampleInputEmail1"
