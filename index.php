@@ -30,7 +30,7 @@ $users = new User();
             echo "<td>" . $user['gender'] . "</td>";
             echo "<td>" . $user['status'] . "</td>"; ?>
             <td>
-                <?php echo "<div class='modal fade' id='updateModalToggle_{$user['id']}' aria-hidden='true' tabindex='-1'>" ?>
+                <?php echo '<div class="modal fade" id="updateModalToggle_'.$user["id"].'" aria-hidden="true" tabindex="-1">' ?>
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -41,26 +41,26 @@ $users = new User();
                         <div class="modal-body">
                             <form method="post" action="CRUD/update_user.php">
                                 <div class="mb-3">
-                                    <?php echo "<input type='hidden' name='id' value={$user['id']} />" ?>
+                                    <?php echo '<input type="hidden" name="id" value="'.$user["id"].'" />' ?>
                                     <label for="InputName" class="form-label">Name</label>
-                                    <?php echo "<input type='text' name='name' value='{$user['name']}' 
-                                                class='form-control' id='InputName'>"; ?>
+                                    <?php echo '<input type="text" name="name" value="'.$user["name"].'" 
+                                                class="form-control" id="InputName">'; ?>
                                 </div>
                                 <div class="mb-3">
                                     <label for="InputEmail" class="form-label">Email</label>
-                                    <?php echo "<input type='email' name='email' class='form-control' 
-                                                       value={$user['email']} id='InputEmail'>"; ?>
+                                    <?php echo '<input type="email" name="email" class="form-control" 
+                                                       value="'.$user['email'].'" id="InputEmail">'; ?>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-check-label" for="InputGender">Gender</label>
                                     <select class="form-select" aria-label="Gender" name="gender">
                                         <?php
                                         if ($user['gender'] === 'male'):
-                                            echo "<option value='female'>female</option>";
+                                            echo '<option value="female">female</option>';
                                         else:
-                                            echo "<option value='male'>male</option>";
+                                            echo '<option value="male">male</option>';
                                         endif;
-                                        echo "<option selected value={$user['gender']}>{$user['gender']}</option>";
+                                        echo '<option selected value="'.$user["gender"].'">'.$user["gender"].'</option>';
                                         ?>
                                     </select>
                                 </div>
@@ -69,11 +69,11 @@ $users = new User();
                                     <select class="form-select" aria-label="Status" name="status">
                                         <?php
                                         if ($user['status'] == 'active'):
-                                            echo "<option value='inactive'>Inactive</option>";
+                                            echo '<option value="inactive">Inactive</option>';
                                         else:
-                                            echo "<option value='active'>active</option>";
+                                            echo '<option value="active">active</option>';
                                         endif;
-                                        echo "<option selected value={$user['status']}>{$user['status']}</option>";
+                                        echo '<option selected value="'.$user["status"].'">'.$user["status"].'</option>';
                                         ?>
                                     </select>
                                 </div>
@@ -83,12 +83,12 @@ $users = new User();
                     </div>
                 </div>
                 </div>
-                <?php echo "<a class='btn btn-primary' data-bs-toggle='modal' 
-                                href='#updateModalToggle_{$user['id']}' role='button'>Edit User</a>" ?>
+                <?php echo '<a class="btn btn-primary" data-bs-toggle="modal" 
+                                href="#updateModalToggle_'.$user["id"].'" role="button">Edit User</a>' ?>
             </td>
             <td>
-                <?php echo "<div class='modal fade' id='deleteModalToggle_{$user['id']}'
-                                 aria-hidden='true' tabindex='-1'>" ?>
+                <?php echo '<div class="modal fade" id="deleteModalToggle_'.$user["id"].'"
+                                 aria-hidden="true" tabindex="-1">' ?>
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -102,7 +102,7 @@ $users = new User();
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
                             <form method="post" action="CRUD/delete_user.php">
-                                <?php echo "<input type='hidden' name='id' value='{$user['id']}'/>"; ?>
+                                <?php echo '<input type="hidden" name="id" value='.$user["id"].'/>'; ?>
                                 <input class="btn btn-danger" type="submit" value="Delete"/>
                             </form>
                             </a>
@@ -110,8 +110,8 @@ $users = new User();
                     </div>
                 </div>
                 </div>
-                <?php echo "<a class='btn btn-danger' data-bs-toggle='modal' 
-                                href='#deleteModalToggle_{$user['id']}' role='button'>Delete</a>" ?>
+                <?php echo '<a class="btn btn-danger" data-bs-toggle="modal"
+                                href="#deleteModalToggle_'.$user["id"].'" role="button">Delete</a>' ?>
             </td>
             <?php echo "</tr>";
         endforeach;
