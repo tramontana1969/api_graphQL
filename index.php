@@ -30,9 +30,7 @@ $users = new User();
             echo "<td>" . $user['gender'] . "</td>";
             echo "<td>" . $user['status'] . "</td>"; ?>
             <td>
-                <?php echo "<div class='modal fade' id='updateModalToggle_{$user['id']}' aria-hidden='true'
-                     aria-labelledby='exampleModalToggleLabel'
-                     tabindex='-1'>" ?>
+                <?php echo "<div class='modal fade' id='updateModalToggle_{$user['id']}' aria-hidden='true' tabindex='-1'>" ?>
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -44,19 +42,18 @@ $users = new User();
                             <form method="post" action="CRUD/update_user.php">
                                 <div class="mb-3">
                                     <?php echo "<input type='hidden' name='id' value={$user['id']} />" ?>
-                                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                                    <label for="InputName" class="form-label">Name</label>
                                     <?php echo "<input type='text' name='name' value='{$user['name']}' 
-                                                class='form-control' id='exampleInputEmail1'
-                                               aria-describedby='emailHelp'>"; ?>
+                                                class='form-control' id='InputName'>"; ?>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Email</label>
-                                    <?php echo "<input type='email' name='email' class='form-control' value={$user['email']}
-                                               id='exampleInputPassword1'>"; ?>
+                                    <label for="InputEmail" class="form-label">Email</label>
+                                    <?php echo "<input type='email' name='email' class='form-control' 
+                                                       value={$user['email']} id='InputEmail'>"; ?>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-check-label" for="exampleCheck1">Gender</label>
-                                    <select class="form-select" aria-label="Default select example" name="gender">
+                                    <label class="form-check-label" for="InputGender">Gender</label>
+                                    <select class="form-select" aria-label="Gender" name="gender">
                                         <?php
                                         if ($user['gender'] === 'male'):
                                             echo "<option value='female'>female</option>";
@@ -68,8 +65,8 @@ $users = new User();
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-check-label" for="exampleCheck1">Status</label>
-                                    <select class="form-select" aria-label="Default select example" name="status">
+                                    <label class="form-check-label" for="InputStatus">Status</label>
+                                    <select class="form-select" aria-label="Status" name="status">
                                         <?php
                                         if ($user['status'] == 'active'):
                                             echo "<option value='inactive'>Inactive</option>";
@@ -90,9 +87,8 @@ $users = new User();
                                 href='#updateModalToggle_{$user['id']}' role='button'>Edit User</a>" ?>
             </td>
             <td>
-                <?php echo "<div class='modal fade' id='deleteModalToggle_{$user['id']}' aria-hidden='true'
-                     aria-labelledby='exampleModalToggleLabel'
-                     tabindex='-1'>" ?>
+                <?php echo "<div class='modal fade' id='deleteModalToggle_{$user['id']}'
+                                 aria-hidden='true' tabindex='-1'>" ?>
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -121,8 +117,7 @@ $users = new User();
         endforeach;
         ?>
     </table>
-    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
-         tabindex="-1">
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -132,25 +127,25 @@ $users = new User();
                 <div class="modal-body">
                     <form method="post" action="CRUD/add_user.php">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Name</label>
-                            <input type="text" name="name" class="form-control" id="exampleInputEmail1"
-                                   aria-describedby="emailHelp">
+                            <label for="InputName" class="form-label">Name</label>
+                            <input type="text" name="name" class="form-control" id="InputName"
+                                   aria-describedby="Name">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Email</label>
-                            <input type="email" name="email" class="form-control" id="exampleInputPassword1">
+                            <label for="InputEmail" class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control" id="InputEmail">
                         </div>
                         <div class="mb-3">
-                            <label class="form-check-label" for="exampleCheck1">Gender</label>
-                            <select class="form-select" aria-label="Default select example" name="gender">
+                            <label class="form-check-label" for="InputGender">Gender</label>
+                            <select class="form-select" aria-label="Gender" name="gender">
                                 <option selected>Select Gender</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-check-label" for="exampleCheck1">Status</label>
-                            <select class="form-select" aria-label="Default select example" name="status">
+                            <label class="form-check-label" for="InputStatus">Status</label>
+                            <select class="form-select" aria-label="Status" name="status">
                                 <option selected>Select Status</option>
                                 <option value="active">Active</option>
                                 <option value="inactive">Inactive</option>
