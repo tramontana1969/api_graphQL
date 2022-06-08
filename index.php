@@ -87,7 +87,7 @@ error_reporting(E_ALL);
                                         ?>
                                     </select>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Add</button>
+                                <button type="submit" class="btn btn-primary">Edit</button>
                             </form>
                         </div>
                     </div>
@@ -95,6 +95,34 @@ error_reporting(E_ALL);
                 </div>
                 <?php echo "<a class='btn btn-primary' data-bs-toggle='modal' 
                                 href='#updateModalToggle_{$user['id']}' role='button'>Edit User</a>" ?>
+            </td>
+            <td>
+                <?php echo "<div class='modal fade' id='deleteModalToggle_{$user['id']}' aria-hidden='true'
+                     aria-labelledby='exampleModalToggleLabel'
+                     tabindex='-1'>" ?>
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalToggleLabel">Delete User</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to delete that user?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                            <form method="post" action="delete_user.php">
+                                <?php echo "<input type='hidden' name='id' value='{$user['id']}'/>"; ?>
+                                <input class="btn btn-danger" type="submit" value="Delete"/>
+                            </form>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <?php echo "<a class='btn btn-danger' data-bs-toggle='modal' 
+                                href='#deleteModalToggle_{$user['id']}' role='button'>Delete</a>" ?>
             </td>
             <?php echo "</tr>";
         endforeach;
