@@ -32,7 +32,7 @@ $statuses = ['active', 'inactive'];
             echo "<td>" . $user['gender'] . "</td>";
             echo "<td>" . $user['status'] . "</td>"; ?>
             <td>
-                <?php echo '<div class="modal fade" id="updateModalToggle_'.$user["id"].'" aria-hidden="true" tabindex="-1">' ?>
+                <?php echo '<div class="modal fade" id="updateModalToggle_' . $user["id"] . '" aria-hidden="true" tabindex="-1">' ?>
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -43,15 +43,15 @@ $statuses = ['active', 'inactive'];
                         <div class="modal-body">
                             <form method="post" action="CRUD/update_user.php">
                                 <div class="mb-3">
-                                    <?php echo '<input type="hidden" name="id" value="'.$user["id"].'" />' ?>
+                                    <?php echo '<input type="hidden" name="id" value="' . $user["id"] . '" />' ?>
                                     <label for="InputName" class="form-label">Name</label>
-                                    <?php echo '<input type="text" name="name" value="'.$user["name"].'" 
+                                    <?php echo '<input type="text" name="name" value="' . $user["name"] . '" 
                                                 class="form-control" id="InputName">'; ?>
                                 </div>
                                 <div class="mb-3">
                                     <label for="InputEmail" class="form-label">Email</label>
                                     <?php echo '<input type="email" name="email" class="form-control" 
-                                                       value="'.$user['email'].'" id="InputEmail">'; ?>
+                                                       value="' . $user['email'] . '" id="InputEmail">'; ?>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-check-label" for="InputGender">Gender</label>
@@ -59,9 +59,9 @@ $statuses = ['active', 'inactive'];
                                         <?php
                                         foreach ($genders as $gender):
                                             if ($user['gender'] == $gender):
-                                                echo '<option selected value="'.$gender.'">'.$gender.'</option>';
+                                                echo '<option selected value="' . $gender . '">' . $gender . '</option>';
                                             else:
-                                                echo '<option value="'.$gender.'">'.$gender.'</option>';
+                                                echo '<option value="' . $gender . '">' . $gender . '</option>';
                                             endif;
                                         endforeach;
                                         ?>
@@ -73,9 +73,9 @@ $statuses = ['active', 'inactive'];
                                         <?php
                                         foreach ($statuses as $status):
                                             if ($user['status'] == $status):
-                                                echo '<option selected value="'.$status.'">'.$status.'</option>';
+                                                echo '<option selected value="' . $status . '">' . $status . '</option>';
                                             else:
-                                                echo '<option value="'.$status.'">'.$status.'</option>';
+                                                echo '<option value="' . $status . '">' . $status . '</option>';
                                             endif;
                                         endforeach;
                                         ?>
@@ -88,10 +88,10 @@ $statuses = ['active', 'inactive'];
                 </div>
                 </div>
                 <?php echo '<a class="btn btn-primary" data-bs-toggle="modal" 
-                                href="#updateModalToggle_'.$user["id"].'" role="button">Edit User</a>' ?>
+                                href="#updateModalToggle_' . $user["id"] . '" role="button">Edit User</a>' ?>
             </td>
             <td>
-                <?php echo '<div class="modal fade" id="deleteModalToggle_'.$user["id"].'"
+                <?php echo '<div class="modal fade" id="deleteModalToggle_' . $user["id"] . '"
                                  aria-hidden="true" tabindex="-1">' ?>
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -106,7 +106,7 @@ $statuses = ['active', 'inactive'];
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
                             <form method="post" action="CRUD/delete_user.php">
-                                <?php echo '<input type="hidden" name="id" value='.$user["id"].'/>'; ?>
+                                <?php echo '<input type="hidden" name="id" value=' . $user["id"] . '/>'; ?>
                                 <input class="btn btn-danger" type="submit" value="Delete"/>
                             </form>
                             </a>
@@ -115,7 +115,7 @@ $statuses = ['active', 'inactive'];
                 </div>
                 </div>
                 <?php echo '<a class="btn btn-danger" data-bs-toggle="modal"
-                                href="#deleteModalToggle_'.$user["id"].'" role="button">Delete</a>' ?>
+                                href="#deleteModalToggle_' . $user["id"] . '" role="button">Delete</a>' ?>
             </td>
             <?php echo "</tr>";
         endforeach;
