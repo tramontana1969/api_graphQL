@@ -53,7 +53,7 @@ $users = new User();
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-check-label" for="InputGender">Gender</label>
-                                    <select class="form-select" aria-label="Gender" name="gender">
+                                    <select class="form-select" id="InputGender" aria-label="Gender" name="gender">
                                         <?php
                                         if ($user['gender'] === 'male'):
                                             echo '<option value="female">female</option>';
@@ -66,7 +66,7 @@ $users = new User();
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-check-label" for="InputStatus">Status</label>
-                                    <select class="form-select" aria-label="Status" name="status">
+                                    <select class="form-select" id="InputStatus" aria-label="Status" name="status">
                                         <?php
                                         if ($user['status'] == 'active'):
                                             echo '<option value="inactive">Inactive</option>';
@@ -137,7 +137,7 @@ $users = new User();
                         </div>
                         <div class="mb-3">
                             <label class="form-check-label" for="InputGender">Gender</label>
-                            <select class="form-select" aria-label="Gender" name="gender">
+                            <select class="form-select" id="InputGender" aria-label="Gender" name="gender">
                                 <option selected>Select Gender</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
@@ -145,7 +145,7 @@ $users = new User();
                         </div>
                         <div class="mb-3">
                             <label class="form-check-label" for="InputStatus">Status</label>
-                            <select class="form-select" aria-label="Status" name="status">
+                            <select class="form-select" id="InputStatus" aria-label="Status" name="status">
                                 <option selected>Select Status</option>
                                 <option value="active">Active</option>
                                 <option value="inactive">Inactive</option>
