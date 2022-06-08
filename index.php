@@ -142,7 +142,7 @@ $statuses = ['active', 'inactive'];
                         <div class="mb-3">
                             <label class="form-check-label" for="InputGender">Gender</label>
                             <select class="form-select" id="InputGender" aria-label="Gender" name="gender">
-                                <option selected>Select Gender</option>
+                                <option>Select Gender</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                             </select>
@@ -150,7 +150,7 @@ $statuses = ['active', 'inactive'];
                         <div class="mb-3">
                             <label class="form-check-label" for="InputStatus">Status</label>
                             <select class="form-select" id="InputStatus" aria-label="Status" name="status">
-                                <option selected>Select Status</option>
+                                <option>Select Status</option>
                                 <option value="active">Active</option>
                                 <option value="inactive">Inactive</option>
                             </select>
