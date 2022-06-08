@@ -1,8 +1,10 @@
 <?php
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 class Connection
 {
-    public static array $array;
+    public static array $user_data;
 
     static function connect(string $url, string $method): string
     {
@@ -17,11 +19,11 @@ class Connection
                 break;
             case 'post':
                 curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(self::$array, JSON_UNESCAPED_UNICODE));
+                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(self::$user_data, JSON_UNESCAPED_UNICODE));
                 break;
             case 'put':
                 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
-                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(self::$array, JSON_UNESCAPED_UNICODE));
+                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(self::$user_data, JSON_UNESCAPED_UNICODE));
                 break;
             case 'delete':
                 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
