@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__.'/../Connection/Connection.php';
+require_once __DIR__ . '/../Connection/Connection.php';
 
 class User
 {
