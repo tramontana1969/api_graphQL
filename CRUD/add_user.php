@@ -12,6 +12,5 @@ if (!empty($name) && !empty($email) && !empty($gender) && !empty($status)) {
     $user->add($name, $email, $gender, $status);
 }
 
-$referer = $_SERVER['HTTP_REFERER'];
-header("Location: $referer");
+header("Location: ../index.php");
 exit();

@@ -8,6 +8,5 @@ if (!empty($_POST['id'])) {
     $user->delete($id);
 }
 
-$referer = $_SERVER['HTTP_REFERER'];
-header("Location: $referer");
+header("Location: ../index.php");
 exit();
